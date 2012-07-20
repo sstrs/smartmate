@@ -1,6 +1,6 @@
 <?php
 
-function transliterate($string)
+function transliterate_G2E($string)
 {
 
 
@@ -9,6 +9,24 @@ $english = array('a', 'a','A','A','b','B','g','G','d','D','e','e','E','E','z','Z
 $result  = str_replace($greek, $english, $string); 
 
 return $result;
+}
+
+function createRandomPassword() {
+ 
+    $chars = "abcdefghijkmnopqrstuvwxyz0123456789!@#$%^&*()";
+    srand((double)microtime()*1000000);
+    $i = 0;
+    $pass = '' ;
+ 
+    while ($i <= 7) {
+        $num = rand() % 33;
+        $tmp = substr($chars, $num, 1);
+        $pass = $pass . $tmp;
+        $i++;
+    }
+ 
+    return $pass;
+ 
 }
 
 
